@@ -1,0 +1,6 @@
+
+    <h1>Add Username</h1>
+    <%= simple_form_for :username, local: true, html: { method: :put}, url: username_path(current_user)  do |f| %>
+    <%= f.input :username %>
+    <%= f.button :submit, class: "btn-primary" %>
+    <% end %>

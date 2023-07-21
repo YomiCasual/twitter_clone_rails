@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :tweet, only: [:create]
   resources :dashboard, only: [:index]
+
+  resources :username, only: [:new, :update]
 end

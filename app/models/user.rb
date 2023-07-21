@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
+  validates :username, uniqueness: { case_sensitive: false }, allow_blank: true
+
+  
   has_many :tweets
 end
