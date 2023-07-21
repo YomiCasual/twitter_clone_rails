@@ -1,0 +1,9 @@
+
+
+<% if url.present? %>
+    <%= link_to url  do %>
+         <button  type="<%= type %>" class="btn btn-<%= variant %> <%= class_names %>"><%= text %></button>
+    <% end %>
+<% else %>
+         <button  type="<%= type %>" class="btn btn-<%= variant %> <%= class_names %>"><%= text %></button>
+<% end %>

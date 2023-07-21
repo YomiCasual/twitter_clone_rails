@@ -11,6 +11,11 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="container pt-5">
+      <%= render(Alert::NewComponent.new(text: notice, is_visible: notice.present? ))%>
+      <%= render(Alert::NewComponent.new(text: alert, is_visible: alert.present?, type: "danger" ))%>
+      <%= yield %>
+    </div>
   </body>
 </html>
