@@ -3,10 +3,10 @@ require 'rails_helper'
 
 RSpec.describe "Homes", type: :request do
     describe "GET /index" do
-        let (:user) { FactoryBot.create(:user, email: "yomionisade@gamil.com", password: 'password')}
+        let (:user) { create(:user)}
 
         context "when signed in" do
-            it "it redirects to sign in page" do
+            it "it redirects to dashboard page" do
                 sign_in user
                 get dashboard_index_path
                 expect(response).to have_http_status(:success)
@@ -17,6 +17,7 @@ RSpec.describe "Homes", type: :request do
             it "it redirects to sign in page" do
                 get dashboard_index_path
                 expect(response).to have_http_status(:redirect)
+                expect(response).to redirect_to(new_user_session_path)
             end
         end
     end
