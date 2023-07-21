@@ -4,7 +4,6 @@ require 'rails_helper'
 RSpec.describe "Tweet", type: :request do
 
     describe "Create tweet" do 
-
         context "When not logged in" do 
             it "should throw error" do 
                 expect {
@@ -16,7 +15,7 @@ RSpec.describe "Tweet", type: :request do
 
         context "When logged in" do 
             it "should throw error" do 
-                user = create(:user)
+                user = create(:user, username: "username")
                 sign_in user
                 expect {
                     post tweet_index_path , params: { tweet: { body: "new tweet" } }
