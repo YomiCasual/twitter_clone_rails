@@ -16,9 +16,10 @@ RSpec.describe "Username", type: :request do
             it "username and redirect to dashboard" do
                 sign_in user
                     put username_path(user), params: {
-                        username: { username: "bodaq"}
+                        user: { username: "bodaq", display_name: "abiodun"}
                     } 
                 expect(user.username).to eq("bodaq")
+                expect(user.display_name).to eq("abiodun")
                 expect(response).to redirect_to(dashboard_index_path)
             end
         end

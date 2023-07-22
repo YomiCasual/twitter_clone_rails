@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     end
     
     def redirect_to_update_username
-        if user_signed_in? && current_user.username.blank?
+        if user_signed_in? && (current_user.username.blank? || current_user&.display_name.blank?)
             redirect_to new_username_path and return
         end
     end

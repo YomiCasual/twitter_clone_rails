@@ -15,7 +15,7 @@ RSpec.describe "Tweet", type: :request do
 
         context "When logged in" do 
             it "should throw error" do 
-                user = create(:user, username: "username")
+                user = create(:user, username: "username", display_name: "abiodun")
                 sign_in user
                 expect {
                     post tweet_index_path , params: { tweet: { body: "new tweet" } }

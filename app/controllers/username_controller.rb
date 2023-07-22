@@ -8,8 +8,7 @@ class UsernameController < ApplicationController
 
 
     def update
-      current_user.username = permited_username[:username]
-      if current_user.save
+      if  current_user.update!(permited_username)
         flash[:notice] = "Successfully updated username"
         redirect_to dashboard_index_path
       else
@@ -20,6 +19,6 @@ class UsernameController < ApplicationController
 
 
     def permited_username
-        params.require(:username).permit(:username)
+        params.require(:user).permit(:username, :display_name)
     end
 end

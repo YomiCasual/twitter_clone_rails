@@ -13,5 +13,8 @@ class User < ApplicationRecord
   def user_handle
     "@#{username || email}"
   end
+  def user_display
+    display_name || username.humanize
+  end
 
 end

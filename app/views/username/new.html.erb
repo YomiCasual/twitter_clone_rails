@@ -1,6 +1,7 @@
 
-    <h1>Add Username</h1>
-    <%= simple_form_for :username, local: true, html: { method: :put}, url: username_path(current_user)  do |f| %>
-    <%= f.input :username %>
+<%= render(Headers::NewComponent.new(page_title: "Update user"))%>
+    <%= simple_form_for :user, local: true, html: { method: :put}, url: username_path(current_user)  do |f| %>
+    <%= f.input :display_name %>
+    <%= f.input :username, input_html: {value: current_user.username }  %>
     <%= f.button :submit, class: "btn-primary" %>
     <% end %>

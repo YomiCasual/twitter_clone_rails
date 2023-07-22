@@ -1,6 +1,10 @@
 <div class="tweet_card"   id="<%= dom_id tweet %>" >
     <div class="header">
-        <p class="username"><%= tweet_owner %></p> |  <p><%= time_ago  %></p> 
+        <p class="display_name">
+        <%= tweet.user&.user_display %>
+        </p>
+        <p class="username">
+        <%= tweet_owner %> | <%= time_ago %> </p> 
     </div>
 
     <p>

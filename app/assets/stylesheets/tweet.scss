@@ -13,9 +13,13 @@
     display: flex;
     gap: 10px;
 
-    .username {
+    .display_name {
       font-weight: bold;
+    }
+
+    .username {
       text-transform: capitalize;
+      color: rgb(93, 93, 93);
     }
   }
 }

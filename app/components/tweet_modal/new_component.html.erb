@@ -1,5 +1,7 @@
 <!-- Modal -->
-<div class="modal fade" id="tweetModal" tabindex="-1" aria-labelledby="tweetModalLabel" aria-hidden="true">
+<div class="modal fade" id="tweetModal" tabindex="-1" aria-labelledby="tweetModalLabel" aria-hidden="true"
+data-controller="tweet-form-modal"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <%# <div class="modal-header">
@@ -7,7 +9,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div> %>
       <div class="modal-body">
-      <div id="tweet_form_modal" data-controller="tweet-form-modal" >
+      <div id="tweet_form_modal" 
+      
+       >
         <%= render(TweetForm::NewComponent.new()) %>
       </div>
       </div>
@@ -16,6 +20,7 @@
       >
         <button type="button"
         id="close_tweet_modal"
+        data-tweet-form-modal-target="closeButton"
          class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <%# <button type="button" class="btn btn-primary">Save changes</button> %>
       </div>
