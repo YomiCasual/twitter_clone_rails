@@ -1,6 +1,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons";
 
+@import "_color";
+@import "button";
 @import "./layout.scss";
 @import "./tweet.scss";
 @import "./dashboard.scss";
@@ -25,4 +27,8 @@ p {
   height: 100px;
   display: flex;
   align-items: center;
+}
+
+textarea {
+  resize: none;
 }

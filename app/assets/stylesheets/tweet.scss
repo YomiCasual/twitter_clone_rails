@@ -1,5 +1,7 @@
 .tweet_form {
   padding: 10px;
+  //   border-bottom: 1px solid lightgray;
+  //   border-top: 1px solid lightgray;
 }
 
 .tweet_card {
@@ -15,5 +17,22 @@
       font-weight: bold;
       text-transform: capitalize;
     }
+  }
+}
+
+.tweet_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tweet_input {
+  border: none !important;
+  padding: 0;
+  font-size: 20px;
+
+  &:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
   }
 }

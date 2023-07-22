@@ -1,0 +1,19 @@
+.btn-twitter {
+  background-color: $twitter-blue;
+  color: white !important;
+  padding: 10px 20px !important;
+  transition: 0.5s all ease;
+  border-radius: 20px !important;
+
+  &:hover {
+    background-color: darken($twitter-blue, 10%);
+  }
+}
+
+.btn-twitter-outline {
+  border: 1px solid $twitter-blue;
+  color: $twitter-blue !important;
+
+  &:hover {
+  }
+}

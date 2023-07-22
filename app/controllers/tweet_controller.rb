@@ -4,10 +4,10 @@ class TweetController < ApplicationController
         tweet = Tweet.new(tweet_params.merge(user: current_user))
         if tweet.save
             flash[:notice] = "Sucessfully saved tweet"
-            redirect_to root_path
+            redirect_to dashboard_index_path
         else
             flash.now[:alert] = extract_errors(tweet)
-            render "home/index", status: :unprocessable_entity
+            render "dashboard/index", status: :unprocessable_entity
         end
     end
 
