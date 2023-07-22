@@ -1,0 +1,19 @@
+.tweet_form {
+  padding: 10px;
+}
+
+.tweet_card {
+  border: 1px solid lightgray;
+  padding: 20px;
+  cursor: pointer;
+
+  .header {
+    display: flex;
+    gap: 10px;
+
+    .username {
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+}

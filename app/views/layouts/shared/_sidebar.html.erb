@@ -1,0 +1,21 @@
+<div class="sidebar_container">
+
+    <div class="header_container">
+    <div>
+        <%= image_tag "twitter_logo.png", width: "50" %>
+    </div>
+    </div>
+
+    <% if user_signed_in? %>
+    <div class="navbar_item_container">
+        <% nav_links.each do |nav_link| %>
+            <%= render(NavBarItem::NewComponent.new(text: nav_link["text"], image: nav_link["image"])) %>
+        <% end %>
+        <%= render(TweetButton::NewComponent.new(user: current_user)) %>
+    </div>
+    <% end %>
+    
+    <div class="logout_button">
+         <%= render(LogoutButton::NewComponent.new(user: current_user)) %>
+    </div>
+</div>

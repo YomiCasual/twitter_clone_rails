@@ -7,6 +7,11 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: { case_sensitive: false }, allow_blank: true
 
-  
+
   has_many :tweets
+
+  def user_handle
+    "@#{username || email}"
+  end
+
 end

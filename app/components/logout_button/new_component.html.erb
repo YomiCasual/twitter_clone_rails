@@ -1,0 +1,18 @@
+<div class="btn-group dropup dropdown_container">
+  <button class="profile_dropdown_button" data-bs-toggle="dropdown" aria-expanded="false">
+
+    <div class="profile_image_container">
+     <%= image_tag "user.png", width: "33" %>
+     <p><%= user&.user_handle %>  </p>
+    </div>
+     <%= image_tag "more.png", width: "23" %>
+  </button>
+  <ul class="dropdown-menu custom_dropdown">
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do  %>
+         <li class="custom_dropdown_item">
+               Logout
+         </li>
+         <% end  %>
+
+  </ul>
+</div>

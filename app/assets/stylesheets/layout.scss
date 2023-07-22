@@ -1,0 +1,23 @@
+.app_container {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.sidebar_container {
+  width: 300px;
+  flex: none;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.middle_container {
+  flex: 1;
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
+}
+
+.logout_button {
+  margin-top: auto;
+}

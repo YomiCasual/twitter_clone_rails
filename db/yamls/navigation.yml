@@ -1,0 +1,23 @@
+- text: Home
+  image: home.png
+  link: nil
+
+- text: Explore
+  image: search.png
+  link: nil
+
+- text: Notifications
+  image: notification.png
+  link: nil
+
+- text: Messages
+  image: message.png
+  link: nil
+
+- text: Lists
+  image: list.png
+  link: nil
+
+- text: Profile
+  image: user.png
+  link: nil

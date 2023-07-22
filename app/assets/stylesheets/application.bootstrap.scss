@@ -1,2 +1,28 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+@import "./layout.scss";
+@import "./tweet.scss";
+@import "./dashboard.scss";
+@import "./navbar.scss";
+
+p {
+  margin-bottom: 0 !important;
+}
+
+.alert_fixed {
+  position: fixed;
+  top: 2%;
+  z-index: 99999;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  transform: translateX(-50%);
+}
+
+.header_container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}

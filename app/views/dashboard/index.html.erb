@@ -1,15 +1,11 @@
-<h1>Welcome <%= current_user.username %></h1>
-    <%= link_to destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do  %>
-        <%= render(Button::NewComponent.new(text: "Logout"))  %>
-    <% end  %>
 
-    <%= simple_form_for :tweet, local: true, url: tweet_index_path  do |f| %>
-    <%= f.input :body %>
-    <%= f.button :submit, class: "btn-primary" %>
-    <% end %>
-
-    <ul>
-    <% Tweet.all.each do |tweet| %>
-    <li><%= tweet.body %></li> 
-    <% end %>
-</ul>
+<div class="dashboard_contaner">
+<div class="header_container dashboard_header ">
+    <div class="dashboard_header">
+        <h1>Welcome <%= current_user.username %></h1>
+    </div>
+</div>
+        <% Tweet.newest_first.all.each do |tweet| %>
+            <%= render(TweetCard::NewComponent.new(tweet: tweet)) %>
+        <% end %>
+</div>

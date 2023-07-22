@@ -10,12 +10,22 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body style="width: 100%">
+        <%= render(Alert::NewComponent.new(text: notice, is_visible: notice.present? ))%>
+        <%= render(Alert::NewComponent.new(text: alert, is_visible: alert.present?, type: "danger" ))%>
 
-    <div class="container pt-5">
-      <%= render(Alert::NewComponent.new(text: notice, is_visible: notice.present? ))%>
-      <%= render(Alert::NewComponent.new(text: alert, is_visible: alert.present?, type: "danger" ))%>
-      <%= yield %>
+    <div class="container  app_container">
+    <%= render "layouts/shared/sidebar" %>
+      <div class="middle_container">
+        <%= yield %>
+      </div>
+      <div class="sidebar_container">
+      content
+      </div>
     </div>
+
+    <%# Modals %>
+    <%= render(TweetModal::NewComponent.new()) %>
+
   </body>
 </html>
