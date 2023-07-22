@@ -1,0 +1,18 @@
+
+<%= turbo_stream.append "flash_notice" do %>
+  <%= render(Alert::NewComponent.new(text: "Successfully added tweet", is_visible: true ))%>
+<% end %>
+
+<%= turbo_stream.replace "tweet_form" do %>
+  <%= render TweetForm::NewComponent.new() %>
+<% end %>
+
+<%= turbo_stream.replace "tweet_form_modal" do %>
+<div id="tweet_form_modal">
+  <%= render TweetForm::NewComponent.new() %>
+</div>
+<% end %>
+
+<%= turbo_stream.prepend "tweets" do %>
+  <%= render TweetCard::NewComponent.new(tweet: @tweet) %>
+<% end %>

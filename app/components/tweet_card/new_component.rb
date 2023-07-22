@@ -16,4 +16,8 @@ class TweetCard::NewComponent < ViewComponent::Base
    tweet.created_at.strftime("%d/%m/%Y")
   end
 
+  def time_ago
+   time_ago_in_words(tweet.created_at)
+  end
+
 end

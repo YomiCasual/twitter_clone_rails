@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import TweetFormModalController from "./tweet_form_modal_controller"
+application.register("tweet-form-modal", TweetFormModalController)

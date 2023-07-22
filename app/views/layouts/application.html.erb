@@ -11,8 +11,12 @@
   </head>
 
   <body style="width: 100%">
-        <%= render(Alert::NewComponent.new(text: notice, is_visible: notice.present? ))%>
-        <%= render(Alert::NewComponent.new(text: alert, is_visible: alert.present?, type: "danger" ))%>
+      <div id="flash_notice">
+      <%= render(Alert::NewComponent.new(text: notice, is_visible: notice.present?))%>
+      </div>
+      <div id="flash_alert">
+      <%= render(Alert::NewComponent.new(text: alert, is_visible: alert.present?, type: "danger"))%>
+      </div>
 
     <div class="container  app_container">
     <%= render "layouts/shared/sidebar" %>

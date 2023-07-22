@@ -1,5 +1,7 @@
-<div class="tweet_form">
-    <%= simple_form_for :tweet, local: true, url: tweet_index_path  do |f| %>
+<div class="tweet_form" id="tweet_form">
+    <%= simple_form_for :tweet, 
+    # local: true, 
+    url: tweet_index_path  do |f| %>
         <%= f.input :body, label: false, :as => :text, 
         :input_html => { 'rows' => 2, 'cols' => 10 , class: 'tweet_input'}, 
 

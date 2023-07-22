@@ -7,7 +7,9 @@
 </div>
         <%= render(TweetForm::NewComponent.new()) %>
 
-        <% Tweet.newest_first.all.each do |tweet| %>
-            <%= render(TweetCard::NewComponent.new(tweet: tweet)) %>
-        <% end %>
+        <div id="tweets">
+            <% Tweet.newest_first.all.each do |tweet| %>
+                <%= render(TweetCard::NewComponent.new(tweet: tweet)) %>
+            <% end %>
+        </div>
 </div>
