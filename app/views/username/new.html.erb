@@ -1,7 +1,8 @@
 
 <%= render(Headers::NewComponent.new(page_title: "Update user"))%>
     <%= simple_form_for :user, local: true, html: { method: :put}, url: username_path(current_user)  do |f| %>
-    <%= f.input :display_name %>
+    <%= f.input :display_name, input_html: {value: current_user.display_name } %>
     <%= f.input :username, input_html: {value: current_user.username }  %>
-    <%= f.button :submit, class: "btn-primary" %>
+    <%= f.input :avatar, as: :file, input_html: {value: current_user.avatar} %>
+    <%= f.button :submit, class: "btn-twitter" %>
     <% end %>

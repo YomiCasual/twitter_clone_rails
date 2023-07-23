@@ -5,4 +5,6 @@ class Tweet < ApplicationRecord
 
 
   scope :newest_first, -> { order(created_at: :desc) }
+
+  delegate :user_handle, :user_display, :avatar, to: :user
 end

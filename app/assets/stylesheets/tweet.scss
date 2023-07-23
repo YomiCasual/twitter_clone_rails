@@ -8,6 +8,8 @@
   border: 1px solid lightgray;
   padding: 20px;
   cursor: pointer;
+  display: flex;
+  gap: 1rem;
 
   .header {
     display: flex;
