@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  resources :tweet, only: [:create]
+  # resources :tweet, only: [:create]
   resources :dashboard, only: [:index]
 
   resources :username, only: [:new, :update]
+
+  resources :tweet, only: [:create] do
+    resources :likes, only: [:create], :controller => 'likes'
+  end
 end

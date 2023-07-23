@@ -3,7 +3,6 @@ class TweetController < ApplicationController
     def create
         @tweet = Tweet.new(tweet_params.merge(user: current_user))
         if @tweet.save
-
             respond_to do |format|
                 flash.now[:notice] = "Sucessfully saved tweet"
                 format.turbo_stream 
@@ -13,7 +12,7 @@ class TweetController < ApplicationController
             end
 
         else
-            flash.now[:alert] = extract_errors(tweet)
+            flash.now[:alert] = extract_errors(@tweet)
             render "dashboard/index", status: :unprocessable_entity
         end
     end

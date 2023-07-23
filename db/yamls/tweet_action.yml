@@ -1,0 +1,20 @@
+- text: Reply
+  image: reply.png
+  key: reply
+  size: 25x25
+
+- text: Retweet
+  image: retweet.png
+  key: retweet
+
+- text: Like
+  image: love.png
+  key: like
+
+- text: Bookmark
+  image: bookmark.png
+  key: bookmark
+
+- text: Share
+  image: share.png
+  key: share

@@ -7,7 +7,7 @@
   alt="Avatar" />
 <% end %>
 
-<div>
+<div class="tweet_body">
     <div class="header">
         <p class="display_name">
         <%= tweet.user_display %>
@@ -18,6 +18,11 @@
     <p>
         <%= tweet.body %>
     </p>
+
+   <div class="tweet_actions" id="tweet_actions_<%= tweet.id %>"  >
+        <%= render "shared/tweet_actions", tweet: tweet %>
+    </div>
 </div>
+
 
 </div>

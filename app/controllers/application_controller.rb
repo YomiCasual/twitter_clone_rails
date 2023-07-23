@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
     protected 
     def nav_links
       @links =  YAML.load_file('db/yamls/navigation.yml')
-      @links
     end
+
     
     def redirect_to_update_username
         if user_signed_in? && (current_user.username.blank? || current_user&.display_name.blank?)

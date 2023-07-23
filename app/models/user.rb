@@ -10,7 +10,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: { case_sensitive: false }, allow_blank: true
 
 
-  has_many :tweets
+  has_many :tweets, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_tweets, :through => :likes, :source => :tweet
   has_one_attached :avatar
 
   def user_handle
@@ -23,6 +25,7 @@ class User < ApplicationRecord
   def set_display_name
     self.display_name = username&.humanize
   end
- 
+  
+  
 
 end
