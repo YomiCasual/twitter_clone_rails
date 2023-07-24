@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :liked_tweets, :through => :likes, :source => :tweet
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_tweet, through: :bookmarks, source: :tweet 
+  has_many :retweets, dependent: :destroy
+  has_many :retweet_tweets, through: :retweets, source: :tweet
 
 
   has_one_attached :avatar

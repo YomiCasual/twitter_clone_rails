@@ -1,0 +1,17 @@
+
+<% if @has_existing_retweet %>
+<%= turbo_stream.append "flash_alert" do %>
+  <%= render(Alert::NewComponent.new(text: "Successfully unretweeted", is_visible: true, type: "danger" ))%>
+<% end %>
+<% else  %>
+<%= turbo_stream.append "flash_notice" do %>
+  <%= render(Alert::NewComponent.new(text: "Successfully retweeted", is_visible: true ))%>
+<% end %>
+<% end  %>
+
+
+
+
+<%= turbo_stream.replace  dom_id(@tweet) do %>
+     <%= render(TweetCard::NewComponent.new(tweet: @tweet)) %>
+<% end %>

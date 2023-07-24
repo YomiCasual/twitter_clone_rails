@@ -4,6 +4,8 @@ class Tweet < ApplicationRecord
   has_many :likes
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_user, through: :bookmarks, source: :user 
+  has_many :retweets, dependent: :destroy
+  has_many :retweet_user, through: :retweets, source: :user
 
   validates :body, presence: true
 
@@ -15,8 +17,12 @@ class Tweet < ApplicationRecord
   def has_liked(user)
     likes.find_by user: user
   end
-  
+
   def has_bookmarked(user)
     bookmarks.find_by user: user
+  end
+
+  def has_retweeted(user)
+    retweets.find_by user: user
   end
 end

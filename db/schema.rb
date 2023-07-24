@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_24_081032) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_24_193403) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -59,6 +59,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_081032) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "retweets", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "tweet_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_retweets_on_tweet_id"
+    t.index ["user_id"], name: "index_retweets_on_user_id"
+  end
+
   create_table "tweets", force: :cascade do |t|
     t.integer "user_id", null: false
     t.text "body"
@@ -88,5 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_081032) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "likes", "tweets"
   add_foreign_key "likes", "users"
+  add_foreign_key "retweets", "tweets"
+  add_foreign_key "retweets", "users"
   add_foreign_key "tweets", "users"
 end
