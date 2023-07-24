@@ -1,5 +1,5 @@
 <%= render partial: "shared/tweet_action", locals: { image: "reply.png", text: "Reply", link: "" } %>
 <%= render partial: "shared/tweet_action", locals: { image: "retweet.png", text: "Retweet", link: "" } %>
 <%= render partial: "shared/tweet_action", locals: { image:  tweet.has_liked(current_user) ? "love-filled.png" : "love.png" , text: "#{tweet.likes_count}", link: tweet_likes_path(tweet) } %>
-<%= render partial: "shared/tweet_action", locals: { image: "bookmark.png", text: "Bookmark", link: "" } %>
+<%= render partial: "shared/tweet_action", locals: { image: tweet.has_bookmarked(current_user) ? "bookmark-filled.png" : "bookmark.png", text: "Bookmark", link: tweet_bookmarks_path(tweet) } %>
 <%= render partial: "shared/tweet_action", locals: { image: "share.png", text: "Share", link: "" } %>

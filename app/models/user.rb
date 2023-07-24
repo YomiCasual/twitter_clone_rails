@@ -13,6 +13,10 @@ class User < ApplicationRecord
   has_many :tweets, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_tweets, :through => :likes, :source => :tweet
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmarked_tweet, through: :bookmarks, source: :tweet 
+
+
   has_one_attached :avatar
 
   def user_handle
@@ -26,6 +30,6 @@ class User < ApplicationRecord
     self.display_name = username&.humanize
   end
   
-  
+
 
 end

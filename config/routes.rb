@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   resources :tweet, only: [:create] do
     resources :likes, only: [:create], :controller => 'likes'
+    resources :bookmarks, only: [:create], :controller => 'bookmarks'
   end
 end
