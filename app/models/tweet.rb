@@ -5,7 +5,7 @@ class Tweet < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_user, through: :bookmarks, source: :user 
   has_many :retweets, dependent: :destroy
-  has_many :retweet_user, through: :retweets, source: :user
+  has_many :retweet_users, through: :retweets, source: :user
 
   validates :body, presence: true
 
